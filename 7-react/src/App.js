@@ -24,12 +24,18 @@
 // import UseReducer from './24-UseReducer'
 // import TodosUseReducer from './25-TodosUseReducer'
 // import UseMemo from './26-UseMemo'
-import Memo from './27-Memo'
+// import Memo from './27-Memo'
+// import UseRef from './28-UseRef'
+// import UseCallback from './29-UseCallback'
+import ContextApp from './context/App'
 
 function App () {
   return (
     <div className='App'>
-      <Memo />
+      <ContextApp />
+      {/* <UseCallback /> */}
+      {/* <UseRef /> */}
+      {/* <Memo /> */}
       {/* <UseMemo /> */}
       {/* <TodosUseReducer /> */}
       {/* <UseReducer /> */}
