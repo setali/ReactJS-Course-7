@@ -1,18 +1,21 @@
 import React, { useContext } from 'react'
 import ThemeContext from './ThemeContext'
 import UserContext from './UserContext'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 export default function Page404 () {
   const theme = useContext(ThemeContext)
   const { login, isLoggedIn, isLoading } = useContext(UserContext)
+
+  const location = useLocation()
 
   if (isLoading) {
     return 'Loading ...'
   }
 
   if (isLoggedIn) {
-    return <Navigate to='/' />
+    // return <Navigate to={'/'} />
+    return <Navigate to={location.state?.from || '/'} />
   }
 
   return (

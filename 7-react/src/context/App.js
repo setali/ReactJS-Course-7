@@ -6,9 +6,12 @@ import Contact from './Contact'
 import About from './About'
 import Posts from './Posts'
 import Login from './Login'
+import Profile from './Profile'
+import Dashboard from './Dashboard'
 import Page404 from './404'
 import Post from './Post'
 import Sidebar from './Sidebar'
+import RequireAuth from './RequireAuth'
 import './style.css'
 import ThemeContext, { themes } from './ThemeContext'
 import useAuth from './useAuth'
@@ -46,6 +49,22 @@ export default function App () {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='about-us' element={<About />} />
                 <Route path='login' element={<Login />} />
+                <Route
+                  path='profile'
+                  element={
+                    <RequireAuth>
+                      <Profile />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path='dashboard'
+                  element={
+                    <RequireAuth>
+                      <Dashboard />
+                    </RequireAuth>
+                  }
+                />
                 <Route path='post' element={<Posts />} />
                 <Route path='post/:id' element={<Post />} />
                 <Route path='*' element={<Page404 />} />

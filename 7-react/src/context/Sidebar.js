@@ -23,6 +23,12 @@ export default class Sidebar extends Component {
           <li>
             <NavLink to='/about-us'>About</NavLink>
           </li>
+          <li>
+            <NavLink to='/profile'>Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to='/dashboard'>Dashboard</NavLink>
+          </li>
         </ul>
       </div>
     )

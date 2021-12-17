@@ -6,3 +6,9 @@
 body {
   font-family: sans !important;
 }
+
+.content {
+  background-color: #fff;
+  margin: 5em;
+  padding: 2em;
+}
