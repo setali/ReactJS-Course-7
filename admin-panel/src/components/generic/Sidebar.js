@@ -25,8 +25,9 @@ export default function Sidebar () {
           </Menu.Item>
         </SubMenu>
         <SubMenu key='posts' icon={<FormOutlined />} title='مدیریت مقالات'>
-          <Menu.Item key='post'>لیست مقالات</Menu.Item>
-          <Menu.Item key='posts/add'>افزودن مقاله</Menu.Item>
+          <Menu.Item key='post'>
+            <Link to='/posts'>لیست مقالات</Link>
+          </Menu.Item>
         </SubMenu>
         <SubMenu key='sub4' icon={<SettingOutlined />} title='تنظیمات'>
           <Menu.Item key='9'>Option 9</Menu.Item>

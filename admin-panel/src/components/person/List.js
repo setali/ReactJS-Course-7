@@ -1,12 +1,13 @@
-import Table from '../utils/Table'
-import axios from 'axios'
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { EyeOutlined } from '@ant-design/icons'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { setPersons } from '../../redux/actions/person'
+import request from '../../tools/request'
+import Table from '../utils/Table'
 
-export default class List extends Component {
+class List extends Component {
   state = {
-    persons: [],
     loading: true
   }
 
@@ -31,8 +32,9 @@ export default class List extends Component {
   ]
 
   componentDidMount () {
-    axios('https://jsonplaceholder.typicode.com/users')
-      .then(({ data }) => this.setState({ persons: data }))
+    request('/users')
+      .then(({ data }) => this.props.setItems(data))
+      // .then(({ data }) => this.setState({ persons: data }))
       .finally(() => this.setState({ loading: false }))
   }
 
@@ -40,7 +42,7 @@ export default class List extends Component {
     return (
       <div>
         <Table
-          data={this.state.persons}
+          data={this.props.persons}
           columns={this.columns}
           loading={this.state.loading}
         />
@@ -48,3 +50,13 @@ export default class List extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  persons: state.persons
+})
+
+const mapDispatchToProps = dispatch => ({
+  setItems: data => dispatch(setPersons(data))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(List)

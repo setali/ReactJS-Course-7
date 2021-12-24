@@ -4,11 +4,10 @@ import '../assets/css/general.css'
 import Dashboard from './generic/Dashboard'
 import Footer from './generic/Footer'
 import Header from './generic/Header'
-import Sidebar from './generic/Sidebar'
-import List from './person/List'
-import Full from './person/Full'
-import New from './person/New'
 import Page404 from './generic/Page404'
+import Sidebar from './generic/Sidebar'
+import PersonRouter from './person/Router'
+import PostRouter from './post/Router'
 
 const { Content } = Layout
 
@@ -22,9 +21,8 @@ function App () {
           <Content className='content'>
             <Routes>
               <Route path='/' element={<Dashboard />} />
-              <Route path='persons' element={<List />} />
-              <Route path='persons/new' element={<New />} />
-              <Route path='persons/:id' element={<Full />} />
+              <Route path='persons/*' element={<PersonRouter />} />
+              <Route path='posts/*' element={<PostRouter />} />
               <Route path='*' element={<Page404 />} />
             </Routes>
           </Content>
