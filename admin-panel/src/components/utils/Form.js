@@ -5,7 +5,6 @@ import {
   Checkbox as AntCheckbox,
   Button
 } from 'antd'
-import React from 'react'
 
 const { Option } = AntSelect
 

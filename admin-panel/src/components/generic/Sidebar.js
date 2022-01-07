@@ -1,11 +1,19 @@
 import { FormOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
 import { Layout, Menu } from 'antd'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout as logoutAction } from 'actions/user'
 
 const { SubMenu } = Menu
 const { Sider } = Layout
 
 export default function Sidebar () {
+  const dispatch = useDispatch()
+
+  function logout () {
+    dispatch(logoutAction())
+  }
+
   return (
     <Sider>
       <Menu
@@ -35,7 +43,7 @@ export default function Sidebar () {
           <Menu.Item key='11'>Option 11</Menu.Item>
           <Menu.Item key='12'>Option 12</Menu.Item>
         </SubMenu>
-        <Menu.Item danger key='logout'>
+        <Menu.Item danger key='logout' onClick={logout}>
           خروج
         </Menu.Item>
       </Menu>

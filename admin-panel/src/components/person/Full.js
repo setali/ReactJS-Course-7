@@ -1,7 +1,7 @@
 import { Divider } from 'antd'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import request from 'tools/request'
 
 export default function Full () {
   const { id } = useParams()
@@ -9,9 +9,7 @@ export default function Full () {
   const [person, setPerson] = useState({})
 
   useEffect(() => {
-    axios(`https://jsonplaceholder.typicode.com/users/${id}`).then(({ data }) =>
-      setPerson(data)
-    )
+    request(`/users/${id}`).then(({ data }) => setPerson(data))
   }, [id])
 
   return (

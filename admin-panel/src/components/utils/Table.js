@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Table as AntTable } from 'antd'
 
 export default function Table ({ rowKey = 'id', data, columns, loading }) {

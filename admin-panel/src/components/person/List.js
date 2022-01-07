@@ -1,10 +1,10 @@
 import { EyeOutlined } from '@ant-design/icons'
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setPersons } from '../../redux/actions/person'
-import request from '../../tools/request'
-import Table from '../utils/Table'
+import { setPersons } from 'actions/person'
+import request from 'tools/request'
+import Table from 'components/utils/Table'
 
 class List extends Component {
   state = {

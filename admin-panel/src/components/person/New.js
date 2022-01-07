@@ -1,7 +1,7 @@
 import { message } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import request from '../../tools/request'
-import Form, { Checkbox, Select, Submit, Text } from '../utils/Form'
+import request from 'tools/request'
+import Form, { Checkbox, Select, Submit, Text } from 'components/utils/Form'
 
 const genderOptions = [
   { label: 'مرد', value: 'male' },

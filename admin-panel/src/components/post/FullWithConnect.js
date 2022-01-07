@@ -1,22 +1,19 @@
+import { getPost } from 'actions/post'
 import { Divider } from 'antd'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { getPost } from 'actions/post'
 
-export default function Full () {
+function Full ({ post, getItem }) {
   const { id } = useParams()
 
-  const post = useSelector(state => state.post)
-  const dispatch = useDispatch()
-
   useEffect(() => {
-    dispatch(getPost(id))
-  }, [id, dispatch])
+    getItem(id)
+  }, [id])
 
   return (
     <div>
-      <h3>نمایش مقاله</h3>
+      <h3>نمایش کاربر</h3>
       <Divider />
       <label>عنوان:</label>
       <Divider type='vertical' />
@@ -30,3 +27,17 @@ export default function Full () {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    post: state.post
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getItem: id => dispatch(getPost(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Full)
