@@ -34,6 +34,8 @@ export function getUser () {
           dispatch(logon(data))
         })
         .finally(() => dispatch(setUserIsLoading(false)))
+    } else {
+      dispatch(setUserIsLoading(false))
     }
   }
 }
