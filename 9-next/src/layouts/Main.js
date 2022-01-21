@@ -1,6 +1,6 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Sidebar from '../components/Sidebar'
+import Header from 'cmp/Header'
+import Footer from 'cmp/Footer'
+import Sidebar from 'cmp/Sidebar'
 import styles from './main.style'
 
 export default function Main ({ children }) {

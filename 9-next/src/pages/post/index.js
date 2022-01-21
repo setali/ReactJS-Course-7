@@ -30,6 +30,7 @@ export default function Posts ({ posts }) {
 }
 
 export async function getServerSideProps () {
+  console.log('getServerSideProps')
   const url = 'https://jsonplaceholder.typicode.com/posts'
 
   const response = await fetch(url)

@@ -24,6 +24,11 @@ export default function Menu () {
             <a>Posts</a>
           </Link>
         </li>
+        <li>
+          <Link href='/user'>
+            <a>Users</a>
+          </Link>
+        </li>
       </ul>
       <style jsx>{`
         menu {

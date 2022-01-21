@@ -1,10 +1,14 @@
-import Main from '../layouts/Main'
+import Head from 'next/head'
+import Main from 'layouts/Main'
 
 export default function About () {
   const color = 'green'
 
   return (
     <Main>
+      <Head>
+        <title>NextJS | About Page</title>
+      </Head>
       <div>
         <h2>About us</h2>
         <p>
